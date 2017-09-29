@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淡入+淡出</title>
+	<script src="./lib/jquery-1.11.1/jquery.min.js"></script>
+	<style>
+		.box{
+			width:400px;
+			height:400px;
+			background:yellowgreen;
+		}
+	</style>
+</head>
+<body>
+	<button>淡入</button>
+	<button>淡出</button>
+	<button>fadeTo</button>
+
+	<hr>
+
+	<div class="box"></div>
+</body>
+<script>
+	// 淡入
+	$('button:eq(0)').click(function(){
+		$('.box').fadeIn(2000);
+	});
+
+	// 淡出
+	$('button:eq(1)').click(function(){
+		$('.box').fadeOut(2000,function(){
+			alert('效果执行结束')
+		});
+	});
+
+	// fadeTO 把所有匹配元素的不透明度以渐进方式调整到指定的不透明度，并在动画完成后可选地触发一个回调函数。
+	$('button:eq(2)').click(function(){
+		$('.box').fadeTo('slow',0.5);
+	});
+
+
+</script>
+</html>
